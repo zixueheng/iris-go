@@ -1,0 +1,30 @@
+<!-- define 的块 会填充到 layout 的 part 部分，命名格式要注意 -->
+{{ define "home-head"}}
+	<title>{{.title}}</title>
+	<style type="text/css">
+		body {
+			background: #999;
+		}
+	</style>
+{{ end }}
+
+<!-- 其他内容 会渲染到 layout 的 yield 部分 -->
+<div>
+	Hello home page
+</div>
+
+<!-- render 渲染其他模板 -->
+{{ render "render.html" }}
+
+<!-- block 块 会自定渲染 -->
+{{ block "b1" "This block will be auto rendered" }}
+<h3>{{ . }}</h3>
+{{ end }}
+
+<!-- 定义一个 块，但不会自动渲染 -->
+{{ define "selfblock" }}
+<h3>Define Block</h3>
+{{ end }}
+
+<!-- 渲染上面定义的 块 -->
+{{ template "selfblock" }}

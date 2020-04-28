@@ -1,0 +1,2 @@
+{"datetime":"Mon, 13 Apr 2020 11:25:30 GMT","level":"INFO","source":"D:/iris-go/http-request/request-logger/request-logger-file-json/main.go:69","latency": "0s","status": 404,"method":"GET","path":"/admin","message":""}
+{"datetime":"Mon, 13 Apr 2020 11:26:13 GMT","level":"INFO","source":"D:/iris-go/http-request/request-logger/request-logger-file-json/main.go:49","latency": "0s","status": 200,"method":"GET","path":"/","message":"something to give more info to the request logger"}
