@@ -52,7 +52,7 @@ func main() {
 	// app := iris.Default()
 
 	// 设置静态文件目录 如图片 JS CSS 等
-	app.HandleDir("/static", "./assets", iris.DirOptions{ShowList: true, Gzip: true})
+	// app.HandleDir("/static", "./assets", iris.DirOptions{ShowList: true, Gzip: true})
 
 	// Resource: http://localhost:8080
 	app.Handle("GET", "/", func(ctx iris.Context) {

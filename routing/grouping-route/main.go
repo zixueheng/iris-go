@@ -23,7 +23,10 @@ func main() {
 	// 或者使用 PartyFunc()方法接受子路由
 	app.PartyFunc("/users", func(users iris.Party) {
 		// Use appends Handler(s) to the current Party's routes and child routes. If the current Party is the root, then it registers the middleware to all child Parties' routes too.
-		users.Use(myAuthMiddlewareHandler)                     // Use() 在当前分组路由和子路由 增加一个处理中间件。如果当前分组是根路由，它会注册到所有子分组路由上
+		users.Use(myAuthMiddlewareHandler)      // Use() 在当前分组路由和子路由 增加一个处理中间件。如果当前分组是根路由，它会注册到所有子分组路由上
+		users.Get("/", func(ctx iris.Context) { // https://iris-go.com/start/
+			ctx.HTML("<h1>User Index</h1>")
+		})
 		users.Get("/{id:uint64}/profile", userProfileHandler)  // http://localhost:8080/users/42/profile
 		users.Get("/messages/{id:uint64}", userMessageHandler) // http://localhost:8080/users/messages/1
 	})
